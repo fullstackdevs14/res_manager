@@ -15,9 +15,18 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from rest_framework.schemas import get_schema_view
+from .views import api_root
+from rest_framework.documentation import include_docs_urls
+
+schema_view = get_schema_view(title='Pastebin API')
 
 urlpatterns = [
+    url(r'^$', api_root),
     url(r'^admin/', admin.site.urls),
-    url(r'^', include('snippets.urls')),
+    url(r'^snippets/', include('snippets.urls')),
+    url(r'^exams/', include('exams.urls')),
     url(r'^api-auth/', include('rest_framework.urls')),
+    url(r'^schema/$', schema_view, name='schemas'),
+    url(r'^docs/', include_docs_urls(title='My API title'))
 ]
