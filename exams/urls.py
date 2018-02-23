@@ -1,4 +1,4 @@
-from django.conf.urls import url, include
+from django.conf.urls import url
 from .views import CategoryViewSet, TestViewSet, QuestionViewSet, exams_root
 from rest_framework.urlpatterns import format_suffix_patterns
 from rest_framework import renderers
@@ -16,6 +16,8 @@ category_detail = CategoryViewSet.as_view({
 category_tests = CategoryViewSet.as_view({
     'get': 'getTests'
 }, renderer_classes=[renderers.JSONRenderer, renderers.BrowsableAPIRenderer])
+
+
 test_list = TestViewSet.as_view({
     'get': 'list',
     'post': 'create'
@@ -29,6 +31,8 @@ test_detail = TestViewSet.as_view({
 test_questions = TestViewSet.as_view({
     'get': 'getQuestions'
 }, renderer_classes=[renderers.JSONRenderer, renderers.BrowsableAPIRenderer])
+
+
 question_list = QuestionViewSet.as_view({
     'get': 'list',
     'post': 'create'

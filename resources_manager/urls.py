@@ -26,6 +26,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^snippets/', include('snippets.urls')),
     url(r'^exams/', include('exams.urls')),
+    url(r'^mylinks/', include('mylinks.urls')),
     url(r'^api-auth/', include('rest_framework.urls')),
     url(r'^schema/$', schema_view, name='schemas'),
     url(r'^docs/', include_docs_urls(title='My API title'))

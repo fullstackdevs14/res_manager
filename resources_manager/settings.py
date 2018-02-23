@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'snippets.apps.SnippetsConfig',
-    'exams.apps.ExamsConfig'
+    'exams.apps.ExamsConfig',
+    'mylinks.apps.MylinksConfig'
 ]
 
 MIDDLEWARE = [

@@ -5,7 +5,7 @@ class Category(models.Model):
 
 class Test(models.Model):
     title = models.CharField(max_length=100)
-    description = models.TextField()
+    description = models.TextField(blank=True)
     category = models.ForeignKey(Category, related_name="tests", on_delete=models.CASCADE)
 
 
