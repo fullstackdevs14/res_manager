@@ -10,6 +10,7 @@ services:
       - "8000:8000"
     depends_on:
       - db
+      - elasticsearch
 
   db:
     image: postgres
@@ -23,3 +24,13 @@ services:
     restart: always
     ports:
       - 8080:8080
+  
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.2.2
+    ports:
+      - 9200:9200
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:6.2.2
+    ports:
+      - "5601:5601"

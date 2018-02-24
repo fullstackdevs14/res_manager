@@ -7,6 +7,6 @@ def api_root(request, format=None):
     return Response({
         'snippets': reverse('snippets-root', request=request, format=format),
         'exams': reverse('exams-root', request=request, format=format),
-        'mylinks': reverse('mylinks-root', request=request, format=format),
+        'mylinks': reverse('mylink-list', request=request, format=format),
         'schemas': reverse('schemas', request=request, format=format),
     })
