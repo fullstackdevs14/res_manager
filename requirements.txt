@@ -6,3 +6,4 @@ django-filter
 pygments
 coreapi
 django-rest-elasticsearch
+djangorestframework-jwt

@@ -18,6 +18,7 @@ from django.contrib import admin
 from rest_framework.schemas import get_schema_view
 from .views import api_root
 from rest_framework.documentation import include_docs_urls
+from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token
 
 schema_view = get_schema_view(title='Pastebin API')
 
@@ -29,5 +30,7 @@ urlpatterns = [
     url(r'^mylinks/', include('mylinks.urls')),
     url(r'^api-auth/', include('rest_framework.urls')),
     url(r'^schema/$', schema_view, name='schemas'),
-    url(r'^docs/', include_docs_urls(title='My API title'))
+    url(r'^docs/', include_docs_urls(title='My API title')),
+    url(r'^auth/token/', obtain_jwt_token),
+    url(r'^auth/token/refresh/', refresh_jwt_token)
 ]
