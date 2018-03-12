@@ -32,5 +32,6 @@ urlpatterns = [
     url(r'^schema/$', schema_view, name='schemas'),
     url(r'^docs/', include_docs_urls(title='My API title')),
     url(r'^auth/token/', obtain_jwt_token),
-    url(r'^auth/token/refresh/', refresh_jwt_token)
+    url(r'^auth/token/refresh/', refresh_jwt_token),
+    url(r'^users/', include('accounts.urls')),
 ]

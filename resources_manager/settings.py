@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'snippets.apps.SnippetsConfig',
     'exams.apps.ExamsConfig',
-    'mylinks.apps.MylinksConfig'
+    'mylinks.apps.MylinksConfig',
+    'accounts.apps.AccountsConfig'
 ]
 
 MIDDLEWARE = [
